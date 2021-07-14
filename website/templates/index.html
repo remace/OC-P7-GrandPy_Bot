@@ -21,23 +21,26 @@
         </header>
         <section id="mainScreen">
             <form action="#" method="post">
-                <input type="text" name="question" id="question_textfield" placeholder="Posez votre question ici" autocomplete="off" required>
-                <!--bouton valider-->
-                <div class="button" id="validate_button">
-                    <i class="fas fa-search fa-1.5x"></i>
+                <div class="inputcontainer">
+                    <input type="text" name="question" id="question_textfield" placeholder="Posez votre question ici" autocomplete="off" required>
+                    <!--btn valider-->
+                    <div class="button" id="validate_button">
+                        <i class="fas fa-search fa-1.5x"></i>
+                    </div>
                 </div>
-                <!--bouton help-->
+                <!--btn help-->     
                 <div class="toggle" id="help_toggle">    
-                    <div class="button" id="help_button">
-                        <i class="fas fa-question fa-1.5x"></i>
-                    </div>
-                    <div class="help_text" id="help_text">
-                    <h2>Aide</h2>
-                    <p>Vous avez une question sur un lieu? demandez à GrandPy, lui, il sait! Il vous trouvera son adresse et vous donnera quelques informations dessus, un peu comme tous les grand-pères!</p>
-                    <p>Par exemple, vous pouvez taper "Palais de l'Elysée" dans la barre centrale de l'application, il devrait vous donner son adresse et vous expliquer l'utilité de ce lieu, à quel moment </p>
-                    </div>
+                <div class="button" id="help_button">
+                    <i class="fas fa-question fa-1.5x"></i>
                 </div>
+                <div class="help_text" id="help_text">
+                <h2>Aide</h2>
+                <p>Vous avez une question sur un lieu? demandez à GrandPy, lui, il sait! Il vous trouvera son adresse et vous donnera quelques informations dessus, un peu comme tous les grand-pères!</p>
+                <p>Par exemple, vous pouvez taper "Palais de l'Elysée" dans la barre centrale de l'application, il devrait vous donner son adresse et vous expliquer l'utilité de ce lieu, à quel moment </p>
+                </div>
+            </div>         
             </form>
+            
             <div id="answer_container">
                 <!--
                     <div id="google_maps_container"></div>
@@ -48,7 +51,7 @@
         <footer>
             <div id="footer_container">
                 <div id="credits">
-                    <div id="credits_sentence">2021 - Rémi Tauvel, Étudiant Openclassrooms - DA Python</div>
+                    <div id="credits_sentence">2021 - Rémi Tauvel<span id="row_change"><br /></span> Étudiant Openclassrooms - DA Python</div>
                 </div>
                 <div id="links">
                     <div id="github_link">

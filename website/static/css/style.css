@@ -5,6 +5,10 @@
     font-family: 'montserrat', sans-serif;
 }
 
+#row_change{
+    display: none;
+}
+
 body{
     background-color: #1ce;;
 }
@@ -57,6 +61,15 @@ form input{
     width: 80vw;
     height: 4em;
     font-size: 1em;
+}
+
+.inputcontainer{
+    margin-right:-40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: 85vw;
 }
 
 
@@ -242,9 +255,21 @@ footer
 @media (max-width:600px){
     form{
         order:2;
+        flex-wrap: wrap;
     }
 
     #answer_container{
         order:1;
+    }
+
+    #help_toggle.active #help_text {
+        bottom:0px;
+    }
+
+    #row_change{
+        display: inline;
+    }
+    #credits{
+        justify-content: center;
     }
 }
