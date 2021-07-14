@@ -1,0 +1,250 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+}
+
+body{
+    background-color: #1ce;;
+}
+
+/*
+header
+*/
+header{
+    height: 7vh;
+    background: gold;
+}
+h1, 
+h1 a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+header p{
+    text-align: center;
+}
+
+/*
+section centrale
+*/
+section{
+height: 86vh;
+background-color: #1ce;
+display: flex;
+flex-flow : column wrap;
+justify-content: space-around;
+align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+form input{
+    margin: 20px 20px;
+    outline: none;
+    border: none;
+    padding: 0 2em 0 2em;
+    border-radius:2em;
+    width: 80vw;
+    height: 4em;
+    font-size: 1em;
+}
+
+
+.button, 
+.toggle{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    position: relative;
+    
+}
+
+.button i{
+    cursor: pointer;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+
+#help_button{
+    background-color: white;
+    z-index: 20;
+    
+}
+
+#help_toggle.active #help_button{
+    background-color: #1ce;
+    transform: translate(-5px, 5px);
+}
+
+#help_toggle i{
+    color: #1ce;
+    z-index: 30;
+}
+
+#help_toggle.active i{
+    color: white;
+    z-index: 30;
+}
+
+#help_text{
+    display: none;
+    transition: all .3s ease-in-out;
+}
+
+#help_toggle.active #help_text {
+    display: inline-block;
+    background-color: white;
+    position:absolute;
+    top:0;
+    right:0;
+    z-index: 10;
+    width:85vw;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+
+#validate_button{
+    background-color: #1ce;
+    right:calc(20px + 3em);
+
+}
+
+#validate_button i{
+    color: white;
+}
+
+
+/* answers container */
+
+#answer_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+  
+#google_maps_container{
+    width: 100px;
+    height: 10000px;
+    padding: 20px;
+}
+
+
+#wikimedia_container{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+}
+
+#answer_container::-webkit-scrollbar {
+    width: 20px; /* width of the entire scrollbar */
+}
+
+#answer_container::-webkit-scrollbar-track {
+    background: white; /* color of the tracking area */
+    border:#1ce 8px solid;
+    width:5px;
+    display: none;
+}
+
+#answer_container::-webkit-scrollbar-track:hover {
+    background: white; /* color of the tracking area */
+    border:#1ce 8px solid;
+    width:5px;
+    display:block;
+}
+
+#answer_container::-webkit-scrollbar-thumb {
+    background-color: white; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid white; /* creates padding around scroll thumb */
+}
+
+/*
+footer
+*/
+
+
+#footer_container {
+    background: gold;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    height: 7vh;
+    width:100vw;
+}
+
+#credits{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+#links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.3em;
+}
+
+#links a{
+    color: #333;
+    text-decoration: none;
+    outline: none;
+}
+
+#links a:visited{
+    color: #333;
+    text-decoration: none;
+    outline: none;
+}
+
+#links div a:hover{
+    cursor:pointer;
+    text-decoration: underline;
+    outline-width: 3px;
+    outline-color: crimson;
+
+}
+
+#links a:focus{
+    color: #333;
+    text-decoration: none;
+}
+#links a:active{
+    outline: none;
+}
+
+
+@media (max-width:600px){
+    form{
+        order:2;
+    }
+
+    #answer_container{
+        order:1;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ static.tab_title }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='img/logo.jpg')}}">
+        <script src="https://kit.fontawesome.com/148d70ce90.js" crossorigin="anonymous"></script>
+        <script src="{{url_for('static', filename='js/help_btn.js')}}" defer></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+            <h1><a href="#">{{static.header_title}}</a></h1>
+            <p>{{static.header_subtitle}}</p>
+        </header>
+        <section id="mainScreen">
+            <form action="#" method="post">
+                <input type="text" name="question" id="question_textfield" placeholder="Posez votre question ici" autocomplete="off" required>
+                <!--bouton valider-->
+                <div class="button" id="validate_button">
+                    <i class="fas fa-search fa-1.5x"></i>
+                </div>
+                <!--bouton help-->
+                <div class="toggle" id="help_toggle">    
+                    <div class="button" id="help_button">
+                        <i class="fas fa-question fa-1.5x"></i>
+                    </div>
+                    <div class="help_text" id="help_text">
+                    <h2>Aide</h2>
+                    <p>Vous avez une question sur un lieu? demandez à GrandPy, lui, il sait! Il vous trouvera son adresse et vous donnera quelques informations dessus, un peu comme tous les grand-pères!</p>
+                    <p>Par exemple, vous pouvez taper "Palais de l'Elysée" dans la barre centrale de l'application, il devrait vous donner son adresse et vous expliquer l'utilité de ce lieu, à quel moment </p>
+                    </div>
+                </div>
+            </form>
+            <div id="answer_container">
+                <!--
+                    <div id="google_maps_container"></div>
+                    <div id="wikimedia_container"></div> 
+                -->
+            </div>
+        </section>
+        <footer>
+            <div id="footer_container">
+                <div id="credits">
+                    <div id="credits_sentence">2021 - Rémi Tauvel, Étudiant Openclassrooms - DA Python</div>
+                </div>
+                <div id="links">
+                    <div id="github_link">
+                        <i class="fab fa-github-square"></i>
+                        <a href="https://github.com/remace">Mon Github</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src= "{{ url_for('static',filename='js/script.js') }} " async defer></script>
+    </body>
+</html>
