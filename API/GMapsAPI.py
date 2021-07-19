@@ -5,13 +5,21 @@ import requests
 class GMapsAPI:
     def __init__(self):
         self.params = {}
+        self.response = {}
         self.api_url = "https://maps.googleapis.com/maps/api/geocode/json?"
         self.params['key'] = config.GOOGLE_MAPS_KEY
 
     def get_location(self, sentence):
         self.params['address'] = sentence
-        return requests.get(self.api_url, params=self.params).json()
+        self.response = requests.get(self.api_url, params=self.params).json()
+        return self.response
 
-if __name__ == '__main__':
-    gm = GMapsAPI()
-    print(gm.get_location("connais palais idéal facteur cheval"))
+    def get_useful_data_from_response(self):
+        useful_data = {'results': {
+            'name': self.response['results'][0]['address_components'][0]['long_name'],
+            'formatted_address': self.response['results'][0]['formatted_address'],
+            'geometry': self.response['results'][0]['geometry']
+            },
+            'status': 'OK'
+        }
+        return useful_data
