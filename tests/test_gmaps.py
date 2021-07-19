@@ -3,7 +3,6 @@ from tests import constants
 import urllib.request
 from io import BytesIO
 import json
-from unittest import TestCase
 
 
 class Test_GMapsAPI:
@@ -22,7 +21,7 @@ class Test_GMapsAPI:
 
         monkeypatch.setattr(urllib.request, 'urlopen', mock_return)
 
-        TestCase().assertDictEqual(self.gm.get_location("connais palais idéal facteur cheval"), results)
+        assert self.gm.get_location("connais palais idéal facteur cheval") == results
 
     def test_get_useful_data_from_response(self):
         self.gm.get_location("connais palais facteur cheval")
