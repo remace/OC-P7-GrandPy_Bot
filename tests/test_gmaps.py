@@ -1,5 +1,3 @@
-from collections import OrderedDict
-
 from API import GMapsAPI
 from tests import constants
 import urllib.request
