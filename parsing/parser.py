@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+@parser for GrandPy Bot
+@author Rémi "remace" Tauvel
+@version 0.0.1
+@date 2021-07-14
+"""
+
 import re
 import json
 

@@ -116,9 +116,8 @@ form input{
     z-index: 30;
 }
 
-#help_text{
+help_text{
     display: none;
-    transition: all .3s ease-in-out;
 }
 
 #help_toggle.active #help_text {
@@ -148,12 +147,13 @@ form input{
 /* answers container */
 
 #answer_container{
+    background:gold;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 90vw;
-    height: 70vh;
+    height: 65vh;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -173,6 +173,8 @@ form input{
 
 #answer_container::-webkit-scrollbar {
     width: 20px; /* width of the entire scrollbar */
+    margin-left: 5px;
+    background: #1ce;
 }
 
 #answer_container::-webkit-scrollbar-track {

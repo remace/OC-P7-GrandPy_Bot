@@ -1,7 +1,7 @@
 from parsing import parser
 
 
-class TestSentenceparser:
+class Test_sentenceparser:
 
     def setup_method(self):
         self.question = "connais-tu le palais idéal du facteur Cheval?"
@@ -9,3 +9,5 @@ class TestSentenceparser:
 
     def test_get_clean_sentence(self):
         assert self.sp.clean_sentence(self.question) == "connais palais idéal facteur cheval"
+
+
