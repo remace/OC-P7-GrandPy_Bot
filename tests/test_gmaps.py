@@ -16,7 +16,7 @@ class Test_GMapsAPI:
     def teardown_method(self):
         self.gm = None
 
-    def test_http_result(self, monkeypatch):
+    def test_get_location(self, monkeypatch):
         results = constants.GMAPS_ANSWER
 
         def mock_return():
