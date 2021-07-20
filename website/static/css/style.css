@@ -5,12 +5,12 @@
     font-family: 'montserrat', sans-serif;
 }
 
-#row_change{
-    display: none;
-}
-
 body{
     background-color: #1ce;;
+}
+
+#row_change{
+        display: none;
 }
 
 /*
@@ -98,7 +98,7 @@ form input{
 #help_button{
     background-color: white;
     z-index: 20;
-    
+    transition: all 0.3s ease-in-out;
 }
 
 #help_toggle.active #help_button{
@@ -116,8 +116,8 @@ form input{
     z-index: 30;
 }
 
-help_text{
-    display: none;
+#help_toggle #help_text{
+    display: None;
 }
 
 #help_toggle.active #help_text {
@@ -160,7 +160,7 @@ help_text{
   
 #google_maps_container{
     width: 100px;
-    height: 10000px;
+    height: 100px;
     padding: 20px;
 }
 
@@ -255,6 +255,10 @@ footer
 
 
 @media (max-width:600px){
+    header{
+        height: 10vh;
+    }
+
     form{
         order:2;
         flex-wrap: wrap;
@@ -262,10 +266,28 @@ footer
 
     #answer_container{
         order:1;
+        height:63vh;
+    }
+
+    #help_toggle #help_text{
+        display:none;
     }
 
     #help_toggle.active #help_text {
-        bottom:0px;
+        display: inline-block;
+        background-color: white;
+        position:absolute;
+        top: unset;
+        bottom: 0;
+        right:0;
+        z-index: 10;
+        width:89vw;
+        border-radius: 20px;
+        padding: 30px;
+    }
+
+    #help_toggle.active #help_button{
+        transform: translate(-5px, -5px);
     }
 
     #row_change{
