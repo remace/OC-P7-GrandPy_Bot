@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+@desc website
+@author Rémi "remace" Tauvel
+@version 0.0.1
+@date 2021-07-16
+"""
 GMAPS_ANSWER = {"results":
     [
         {"address_components":
@@ -163,3 +170,24 @@ JSON_WIKIPEDIA_RESPONSE_GEOSEARCH = {"batchcomplete": "",
                                                  ]
                                          }
                                      }
+
+WIKIPEDIA_INTRO = {"batchcomplete":"",
+                   "query":{
+                       "pages":
+                           {"332154":
+                                {"pageid": 332154,
+                                 "ns": 0,
+                                 "title": "Palais idéal",
+                                 "extract": "Le Palais idéal (aussi appelé le Palais idéal du facteur Cheval) est un "
+                                           "monument construit à Hauterives (France) par le facteur Ferdinand Cheval, "
+                                           "de 1879 à 1912.\nChef-d'œuvre de l'architecture naïve et de l'art naïf, "
+                                           "il est classé au titre des monuments historiques depuis 1969.\nÀ "
+                                           "l'occasion d'un vote organisé durant l'été 2020, au niveau national, "
+                                           "par les producteurs de l'émission Le Monument préféré des Français, "
+                                           "diffusée sur France Télévisions, le Palais idéal a été classé deuxième "
+                                           "sur une liste de quatorze monuments. Sa construction a également fait "
+                                           "l'objet d'un film biographique français réalisé par Nils Tavernier et "
+                                           "sorti en 2018."}
+                                                        }
+                                               }
+                   }

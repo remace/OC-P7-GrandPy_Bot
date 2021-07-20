@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+@desc website
+@author Rémi "remace" Tauvel
+@version 0.0.1
+@date 2021-07-19
+"""
 import config
 import requests
 
