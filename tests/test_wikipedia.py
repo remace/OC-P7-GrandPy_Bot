@@ -1,5 +1,4 @@
 import API.wikipedia_API
-from API import wikipedia_API
 from tests import constants
 import urllib.request
 from io import BytesIO
@@ -12,7 +11,7 @@ class Test_Wikipedia_API:
         self.w = API.wikipedia_API.Wikipedia_API()
 
     def teardown_method(self):
-        self.w=None
+        self.w = None
 
     def test_get_pages_around_location(self, monkeypatch):
         results = constants.JSON_WIKIPEDIA_RESPONSE_GEOSEARCH
