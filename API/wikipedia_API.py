@@ -16,7 +16,7 @@ class Wikipedia_API:
         self.response = {}
         self.best_page = {}
 
-    def get_pages_around_location(self, lat, lng):
+    def _get_pages_around_location(self, lat, lng):
         self.params={
             "action": 'query',
             'list': 'geosearch',
@@ -28,7 +28,7 @@ class Wikipedia_API:
         self.response = requests.get(self.url, self.params).json()
         return self.response
 
-    def select_best_page(self, sentence):
+    def _select_best_page(self, sentence):
         sentence_as_list = sentence.split(' ')
         index = -1
         previous_count = 0
@@ -43,7 +43,7 @@ class Wikipedia_API:
                 self.best_page = page
         return self.best_page
 
-    def get_infos_on_page(self):
+    def _get_infos_on_page(self):
         self.params = {
             'action': 'query',
             'prop': 'extracts',
@@ -60,11 +60,8 @@ class Wikipedia_API:
         }
         return infos
 
-
-if __name__ == "__main__":
-    w = Wikipedia_API()
-    w.get_pages_around_location(lat=45.25653760000001, lng=5.0282228)
-    w.select_best_page("connais palais idéal facteur cheval")
-    w.get_infos_on_page()
-
+    def search_wikipedia(self,lat,lng,sentence):
+        self._get_pages_around_location(lat=lat, lng=lng)
+        self._select_best_page(sentence)
+        return self._get_infos_on_page()
 
