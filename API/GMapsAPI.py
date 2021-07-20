@@ -16,12 +16,12 @@ class GMapsAPI:
         self.api_url = "https://maps.googleapis.com/maps/api/geocode/json?"
         self.params['key'] = config.GOOGLE_MAPS_KEY
 
-    def get_location(self, sentence):
+    def _get_location(self, sentence):
         self.params['address'] = sentence
         self.response = requests.get(self.api_url, params=self.params).json()
         return self.response
 
-    def get_useful_data_from_response(self):
+    def _get_useful_data_from_response(self):
         useful_data = {'results': {
             'name': self.response['results'][0]['address_components'][0]['long_name'],
             'formatted_address': self.response['results'][0]['formatted_address'],
@@ -30,3 +30,7 @@ class GMapsAPI:
             'status': 'OK'
         }
         return useful_data
+
+    def search(self, sentence):
+        self._get_location(sentence)
+        return self._get_useful_data_from_response()

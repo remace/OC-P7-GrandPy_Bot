@@ -21,8 +21,11 @@ class Test_GMapsAPI:
 
         monkeypatch.setattr(urllib.request, 'urlopen', mock_return)
 
-        assert self.gm.get_location("connais palais idéal facteur cheval") == results
+        assert self.gm._get_location("connais palais idéal facteur cheval") == results
 
     def test_get_useful_data_from_response(self):
-        self.gm.get_location("connais palais facteur cheval")
-        assert self.gm.get_useful_data_from_response() == constants.USEFUL_DATA
+        self.gm._get_location("connais palais facteur cheval")
+        assert self.gm._get_useful_data_from_response() == constants.USEFUL_DATA
+
+    def test_search(self):
+        assert self.gm.search("connais palais facteur cheval") == constants.USEFUL_DATA

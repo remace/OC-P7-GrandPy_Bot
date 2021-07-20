@@ -6,16 +6,26 @@
 @date 2021-07-14
 """
 
-from flask import Flask, render_template
-import config
+from flask import Flask, render_template, request
+from GrandPy import GrandPy
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    # page_static_data = {}
-    # page_static_data["tab_title"] = config.PAGE_TITLE
-    # return render_template('index.html', static= page_static_data)
     return render_template('index.html')
+
+
+@app.route('/AskGrandPy/', methods=['POST', 'GET'])
+def AskGrandPy():
+    if request.method == 'POST':
+        sentence = request.form['sentence']
+    elif request.method == 'GET':
+        sentence = request.args.get('sentence')
+    else:
+        return {"error": "bad method"}
+    grandpy = GrandPy.GrandPy()
+    return grandpy.answer(sentence), 200
+
 
 if __name__ == "__main__":
     app.run(debug=True)
