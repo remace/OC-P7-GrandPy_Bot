@@ -151,26 +151,37 @@ form input{
 #answer_container{
     background:gold;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     width: 90vw;
     height: 65vh;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-  
-#google_maps_container{
-    width: 100px;
-    height: 100px;
-    padding: 20px;
+
+#answer_container .answer{
+    background: blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80vw;
 }
 
 
-#wikimedia_container{
-    width: 100px;
-    height: 100px;
-    padding: 20px;
+  
+.google_maps_container{
+    background: tomato;
+    margin: 20px;
+    width: 45%;
+}
+
+
+.wikimedia_container{
+    background: violet;;
+    width: 45%;
+    margin: 20px;
 }
 
 #answer_container::-webkit-scrollbar {
