@@ -17,7 +17,7 @@ class Wikipedia_API:
         self.best_page = {}
 
     def _get_pages_around_location(self, lat, lng):
-        self.params={
+        self.params = {
             "action": 'query',
             'list': 'geosearch',
             'format': 'json',
@@ -60,8 +60,7 @@ class Wikipedia_API:
         }
         return infos
 
-    def search_wikipedia(self,lat,lng,sentence):
+    def search_wikipedia(self, lat, lng, sentence):
         self._get_pages_around_location(lat=lat, lng=lng)
         self._select_best_page(sentence)
         return self._get_infos_on_page()
-

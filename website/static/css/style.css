@@ -75,8 +75,10 @@ form input{
 
 .button, 
 .toggle{
-    width: 2.5em;
     height: 2.5em;
+    width: 2.5em;
+    min-width: 2.5em;
+    min-height: 2.5em;
     border-radius: 50%;
     position: relative;
     
@@ -256,7 +258,7 @@ footer
 
 @media (max-width:600px){
     header{
-        height: 10vh;
+        height: 7vh;
     }
 
     form{
