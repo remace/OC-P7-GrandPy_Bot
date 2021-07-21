@@ -1,4 +1,4 @@
-from parsing import parser
+from libs.parsing import parser
 
 class Test_sentenceparser:
 

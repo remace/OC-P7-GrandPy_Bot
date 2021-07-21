@@ -7,8 +7,8 @@
 """
 
 
-from API import wikipedia_API, GMapsAPI
-from parsing import parser
+from libs.API import wikipedia_API, GMapsAPI
+from libs.parsing import parser
 
 
 class GrandPy:

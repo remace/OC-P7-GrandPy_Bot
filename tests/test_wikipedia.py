@@ -1,4 +1,4 @@
-import API.wikipedia_API
+from libs.API import wikipedia_API
 from tests import constants
 import urllib.request
 from io import BytesIO
@@ -8,7 +8,7 @@ import json
 class Test_Wikipedia_API:
 
     def setup_method(self):
-        self.w = API.wikipedia_API.Wikipedia_API()
+        self.w = wikipedia_API.Wikipedia_API()
 
     def teardown_method(self):
         self.w = None

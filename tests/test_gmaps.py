@@ -1,4 +1,4 @@
-from API import GMapsAPI
+from libs.API import GMapsAPI
 from tests import constants
 import urllib.request
 from io import BytesIO

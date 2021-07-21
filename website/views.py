@@ -7,7 +7,8 @@
 """
 
 from flask import Flask, render_template, request
-from GrandPy import GrandPy
+from libs.GrandPy import GrandPy
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,13 +19,13 @@ def index():
 @app.route('/AskGrandPy/', methods=['POST', 'GET'])
 def AskGrandPy():
     if request.method == 'POST':
-        sentence = request.form['sentence']
+        return {"error": "bad method"}
     elif request.method == 'GET':
         sentence = request.args.get('sentence')
     else:
         return {"error": "bad method"}
     grandpy = GrandPy.GrandPy()
-    return grandpy.answer(sentence), 200
+    return grandpy.answer(sentence)
 
 
 if __name__ == "__main__":
