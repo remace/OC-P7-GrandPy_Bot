@@ -1,6 +1,6 @@
 ﻿#!/usr/bin/env python3
 """
-@desc website
+@desc wikipedia API wrapper
 @author Rémi "remace" Tauvel
 @version 0.0.1
 @date 2021-07-14

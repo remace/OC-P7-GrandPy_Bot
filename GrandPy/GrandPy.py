@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""
+@desc API manager for Grandpy_bot
+@author Rémi "remace" Tauvel
+@version 0.0.1
+@date 2021-07-21
+"""
+
+
 from API import wikipedia_API, GMapsAPI
 from parsing import parser
 
