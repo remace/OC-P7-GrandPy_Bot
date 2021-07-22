@@ -149,10 +149,9 @@ form input{
 /* answers container */
 
 #answer_container{
-    background:gold;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between
     align-items: center;
     width: 90vw;
     height: 65vh;
@@ -161,25 +160,47 @@ form input{
 }
 
 #answer_container .answer{
-    background: blue;
+    background:gold;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    border-radius:20px;
     width: 80vw;
+    margin: 10px;
+    position: relative;
 }
 
 
+#answer_container .question_div{
+    background:gold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius:20px;
+    width: 80vw;
+    margin: 10px;
+    position: relative;
+    padding:20px;
+}
   
 .google_maps_container{
     background: tomato;
     margin: 20px;
     width: 45%;
+    height: calc(100% - 40px);
+    overflow:auto;
+}
+
+.google_maps_container .gmap{
+    height: 100%;
+    width: 100%;
 }
 
 
+
 .wikimedia_container{
-    background: violet;;
     width: 45%;
     margin: 20px;
 }
@@ -209,6 +230,19 @@ form input{
     border-radius: 20px; /* roundness of the scroll thumb */
     border: 3px solid white; /* creates padding around scroll thumb */
 }
+
+.answer a{
+    outline:none;
+    color: #333;
+    font-style:italic;
+
+}
+
+.answer a:hover{
+    outline:none;
+    cursor: pointer:
+}
+
 
 /*
 footer
@@ -308,5 +342,18 @@ footer
     }
     #credits{
         justify-content: center;
+    }
+}
+
+
+
+@media (max-width:1000px){
+    .google_maps_container{
+        width:90%;
+        height:26vh
+    }
+
+    .wikimedia_container{
+        width:90%;
     }
 }

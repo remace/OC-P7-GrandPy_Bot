@@ -10,6 +10,7 @@
         <link rel="icon" href="{{ url_for('static', filename='img/logo.jpg')}}">
         <script src="https://kit.fontawesome.com/148d70ce90.js" crossorigin="anonymous"></script>
         <script src="{{url_for('static', filename='js/help_btn.js')}}" defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&libraries=&v=weekly" async></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -40,13 +41,7 @@
                     </div>
             </div>         
             </form>
-            
             <div id="answer_container">
-                    <!--<div class="answer">
-                        <div class="google_maps_container"></div>
-                        <div class="wikimedia_container"></div> 
-                    </div>
-                    -->
             </div>
         </section>
         <footer>
