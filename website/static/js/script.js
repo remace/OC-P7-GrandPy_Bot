@@ -4,7 +4,8 @@ let BUTTON = document.getElementById('validate_button');
 let ANSWER_CONTAINER = document.getElementById('answer_container')
 
 console.log("connais tu le palais idéal du facteur cheval?")
-
+console.log("tour eiffel Paris")
+console.log("coucou")
 
 BUTTON.addEventListener('click', function (event){
     send_data()
@@ -57,7 +58,9 @@ function create_wiki_div(data){
     let div = document.createElement('div')
     let title = data.wiki_info.title
     let extract = data.wiki_info.intro
-    let content = "<h3>"+title+"</h3><p>"+extract+"</p>"
+    let link_url = "https://fr.wikipedia.org/wiki/"+title.replace(/ /g,'_')
+    console.log(link_url)
+    let content = "<h3>"+title+"</h3><p>"+extract+"</p><p><a href="+ link_url +">lien wikipedia</a></p>"
     div.innerHTML = content   
     return (div)
 }
