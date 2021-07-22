@@ -30,17 +30,15 @@ class Wikipedia_API:
 
     def _select_best_page(self, sentence):
         sentence_as_list = sentence.split(' ')
-        index = -1
         previous_count = 0
-
         for page in self.response['query']['geosearch']:
             count = 0
-            index += 1
             for word in sentence_as_list:
-                if word in page['title']:
+                if word in page['title'].lower():
                     count += 1
             if count > previous_count:
                 self.best_page = page
+                previous_count = count
         return self.best_page
 
     def _get_infos_on_page(self):

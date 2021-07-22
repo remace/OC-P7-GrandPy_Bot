@@ -20,4 +20,5 @@ class SentenceParser:
     def get_clean_sentence(self, sentence):
         sentence_as_table = re.split(r'\W', sentence.lower())
         clean_sentence_as_table = [word for word in sentence_as_table if word not in self.stop_words]
-        return (" ".join(clean_sentence_as_table)).strip()
+        clean_sentence = (" ".join(clean_sentence_as_table)).strip()
+        return clean_sentence
