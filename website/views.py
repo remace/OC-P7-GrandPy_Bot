@@ -18,7 +18,7 @@ def index():
 
 
 @app.route('/AskGrandPy/', methods=['POST', 'GET'])
-def AskGrandPy():
+def ask_grandpy():
     if request.method == 'POST':
         return {"error": "bad method"}
     elif request.method == 'GET':

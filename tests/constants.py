@@ -128,46 +128,41 @@ USEFUL_DATA = {"results":
 
 JSON_WIKIPEDIA_RESPONSE_GEOSEARCH = {"batchcomplete": "",
                                      "query":
-                                         {
-                                             "geosearch":
-                                                 [{
-                                                     "pageid": 7959388,
-                                                     "ns": 0,
-                                                     "title":
-                                                         "Tombe du Facteur Cheval",
-                                                     "lat": 45.2565273,
-                                                     "lon": 5.0281498,
-                                                     "dist": 5.8,
-                                                     "primary": ""},
-                                                     {"pageid": 332154,
-                                                      "ns": 0,
-                                                      "title": "Palais idéal",
-                                                      "lat": 45.256267,
-                                                      "lon": 5.028506,
-                                                      "dist": 37.4,
-                                                      "primary": ""},
-                                                     {"pageid": 7966431,
-                                                      "ns": 0,
-                                                      "title": "Villa Alicius",
-                                                      "lat": 45.255889,
-                                                      "lon": 5.027794,
-                                                      "dist": 79.5,
-                                                      "primary": ""},
-                                                     {"pageid": 355220,
-                                                      "ns": 0,
-                                                      "title": "Hauterives",
-                                                      "lat": 45.2561111111,
-                                                      "lon": 5.02722222222,
-                                                      "dist": 91.6,
-                                                      "primary": ""},
-                                                     {"pageid": 7961734,
-                                                      "ns": 0,
-                                                      "title": "Château de Hauterives (Drôme)",
-                                                      "lat": 45.2539,
-                                                      "lon": 5.0293,
-                                                      "dist": 305.2,
-                                                      "primary": ""}
-                                                 ]
+                                         {"geosearch":
+                                             [{
+                                                 "pageid": 332154,
+                                                 "ns": 0,
+                                                 "title": "Palais idéal",
+                                                 "lat": 45.256267,
+                                                 "lon": 5.028506,
+                                                 "dist": 37.4,
+                                                 "primary": ""
+                                             },
+                                             {
+                                                 "pageid": 7966431,
+                                                 "ns": 0,
+                                                 "title": "Villa Alicius",
+                                                 "lat": 45.255889,
+                                                 "lon": 5.027794,
+                                                 "dist": 79.5,
+                                                 "primary": ""},
+                                             {
+                                                 "pageid": 355220,
+                                                 "ns": 0,
+                                                 "title": "Hauterives",
+                                                 "lat": 45.2561111111,
+                                                 "lon": 5.02722222222,
+                                                 "dist": 91.6,
+                                                 "primary": ""},
+                                             {
+                                                 "pageid": 7961734,
+                                                 "ns": 0,
+                                                 "title": "Château de Hauterives (Drôme)",
+                                                 "lat": 45.2539,
+                                                 "lon": 5.0293,
+                                                 "dist": 305.2,
+                                                 "primary": ""
+                                             }]
                                          }
                                      }
 
@@ -179,15 +174,15 @@ WIKIPEDIA_INTRO = {"batchcomplete":"",
                                  "ns": 0,
                                  "title": "Palais idéal",
                                  "extract": "Le Palais idéal (aussi appelé le Palais idéal du facteur Cheval) est un "
-                                           "monument construit à Hauterives (France) par le facteur Ferdinand Cheval, "
-                                           "de 1879 à 1912.\nChef-d'œuvre de l'architecture naïve et de l'art naïf, "
-                                           "il est classé au titre des monuments historiques depuis 1969.\nÀ "
-                                           "l'occasion d'un vote organisé durant l'été 2020, au niveau national, "
-                                           "par les producteurs de l'émission Le Monument préféré des Français, "
-                                           "diffusée sur France Télévisions, le Palais idéal a été classé deuxième "
-                                           "sur une liste de quatorze monuments. Sa construction a également fait "
-                                           "l'objet d'un film biographique français réalisé par Nils Tavernier et "
-                                           "sorti en 2018."}
-                                                        }
-                                               }
+                                            "monument construit à Hauterives (France) par le facteur Ferdinand Cheval, "
+                                            "de 1879 à 1912.\nChef-d'œuvre de l'architecture naïve et de l'art naïf, "
+                                            "il est classé au titre des monuments historiques depuis 1969.\nÀ "
+                                            "l'occasion d'un vote organisé durant l'été 2020, au niveau national, "
+                                            "par les producteurs de l'émission Le Monument préféré des Français, "
+                                            "diffusée sur France Télévisions, le Palais idéal a été classé deuxième "
+                                            "sur une liste de quatorze monuments. Sa construction a également fait "
+                                            "l'objet d'un film biographique français réalisé par Nils Tavernier et "
+                                            "sorti en 2018."}
+                            }
+                   }
                    }

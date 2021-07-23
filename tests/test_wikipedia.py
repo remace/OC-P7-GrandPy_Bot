@@ -18,11 +18,10 @@ class Test_Wikipedia_API:
         def mock_return():
             return BytesIO(json.dumps(results).encode())
         monkeypatch.setattr(urllib.request, 'urlopen', mock_return)
-
         assert self.w._get_pages_around_location(lat=45.25653760000001, lng=5.0282228) == results
 
     def test_select_best_page(self):
-        result = constants.JSON_WIKIPEDIA_RESPONSE_GEOSEARCH['query']['geosearch'][1]
+        result = constants.JSON_WIKIPEDIA_RESPONSE_GEOSEARCH['query']['geosearch'][0]
         self.w._get_pages_around_location(lat=45.25653760000001, lng=5.0282228)
         assert self.w._select_best_page("connais palais idéal facteur cheval") == result
 
