@@ -5,7 +5,6 @@
 @version 0.0.1
 @date 2021-07-14
 """
-from collections import OrderedDict
 
 import requests
 
@@ -27,19 +26,20 @@ class Wikipedia_API:
             'gscoord': f"{lat}|{lng}"
         }
         self.response = requests.get(self.url, self.params).json()
-        return self.response
+        return {'wikipedia_infos':self.response,
+                'status': 'OK'}
 
-    def title_score(self, page, sentence):
-        '''gives a score to a page depending on how early its words happen in the user request.
+    @staticmethod
+    def title_score(page, sentence):
+        """
+        gives a score to a page depending on how early its words happen in the user request.
         the lower the score, the better the page fits the request
-        '''
+        """
         score = 0
         for word in page['title'].split(' '):
             if word in sentence.split(' '):
                 score += page['title'].split(' ').index(word) + 1
         return score
-
-
 
     def _select_best_page(self, sentence):
         sentence_as_list = sentence.split(' ')
@@ -61,7 +61,7 @@ class Wikipedia_API:
                 }
                 previous_count = count
             elif count == previous_count:
-                best_titles.page['title'] = {
+                best_titles[page['title']] = {
                     'score': self.title_score(page, sentence),
                     'index': index,
                 }
@@ -72,8 +72,11 @@ class Wikipedia_API:
             if best_titles[title]['score'] < previous_score:
                 index = best_titles[title]['index']
                 previous_score = best_titles[title]['index']
-        self.best_page = self.response['query']['geosearch'][index]
-        return self.best_page
+        if previous_count != 0:
+            self.best_page = self.response['query']['geosearch'][index]
+            return self.best_page
+        else:
+            return []
 
     def _get_infos_on_page(self):
         self.params = {
@@ -95,4 +98,10 @@ class Wikipedia_API:
     def search_wikipedia(self, lat, lng, sentence):
         self._get_pages_around_location(lat=lat, lng=lng)
         self._select_best_page(sentence)
-        return self._get_infos_on_page()
+        if self.best_page:
+            infos = self._get_infos_on_page()
+            return {'wikipedia_infos': infos,
+                    'status': 'OK'}
+        else:
+            return {'wikipedia_infos': [],
+                    'status': 'ZERO_RESULT'}

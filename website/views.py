@@ -17,14 +17,10 @@ def index():
     return render_template('index.html', google_api_key = config.GOOGLE_MAPS_KEY)
 
 
-@app.route('/AskGrandPy/', methods=['POST', 'GET'])
+@app.route('/AskGrandPy/', methods=['GET'])
 def ask_grandpy():
-    if request.method == 'POST':
-        return {"error": "bad method"}
-    elif request.method == 'GET':
+    if request.method == 'GET':
         sentence = request.args.get('sentence')
-    else:
-        return {"error": "bad method"}
     grandpy = GrandPy.GrandPy()
     return grandpy.answer(sentence)
 

@@ -90,6 +90,11 @@ GMAPS_ANSWER = {"results":
     "status":
         "OK"}
 
+GMAPS_ANSWER_ZERO_RESULT = {
+    "results": [],
+    "status": "ZERO_RESULTS"}
+
+
 USEFUL_DATA = {"results":
     {
         'name':
@@ -122,11 +127,10 @@ USEFUL_DATA = {"results":
                  }
              }
     },
-    'status':
-        "OK"
+    'status': "OK"
 }
 
-JSON_WIKIPEDIA_RESPONSE_GEOSEARCH = {"batchcomplete": "",
+JSON_WIKIPEDIA_RESPONSE_GEOSEARCH = {'wikipedia_infos':{"batchcomplete": "",
                                      "query":
                                          {"geosearch":
                                              [{
@@ -164,10 +168,19 @@ JSON_WIKIPEDIA_RESPONSE_GEOSEARCH = {"batchcomplete": "",
                                                  "primary": ""
                                              }]
                                          }
+                                     },
+                                     'status': 'OK'
                                      }
 
+JSON_WIKIPEDIA_RESPONSE_GEOSEARCH_VOID = {
+    "batchcomplete": "",
+    "query": {
+        "geosearch": []
+    }
+}
+
 WIKIPEDIA_INTRO = {"batchcomplete":"",
-                   "query":{
+                   "query": {
                        "pages":
                            {"332154":
                                 {"pageid": 332154,
@@ -186,3 +199,4 @@ WIKIPEDIA_INTRO = {"batchcomplete":"",
                             }
                    }
                    }
+

@@ -15,13 +15,19 @@ class Test_GMapsAPI:
 
     def test_get_location(self, monkeypatch):
         results = constants.GMAPS_ANSWER
-
         def mock_return():
             return BytesIO(json.dumps(results).encode())
 
         monkeypatch.setattr(urllib.request, 'urlopen', mock_return)
-
         assert self.gm._get_location("connais palais idéal facteur cheval") == results
+
+    def test_get_location_not_existing(self, monkeypatch):
+        results = constants.GMAPS_ANSWER_ZERO_RESULT
+        def mock_return():
+            return BytesIO(json.dumps(results).encode())
+
+        monkeypatch.setattr(urllib.request, 'urlopen', mock_return)
+        assert self.gm._get_location('pmquhvb^quehgtbùôquetngùO') == results
 
     def test_get_useful_data_from_response(self):
         self.gm._get_location("connais palais facteur cheval")

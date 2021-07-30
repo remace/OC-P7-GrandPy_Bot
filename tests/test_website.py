@@ -14,8 +14,11 @@ class Test_Views:
 
         result = {'maps_info': constants.USEFUL_DATA,
                   'wiki_info': {
-                      'intro': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['extract'],
-                      'title': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['title']
+                      'wikipedia_info': {
+                        'intro': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['extract'],
+                        'title': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['title'],
+                    },
+                    'status': 'OK'
                   }
                   }
         rep = requests.get(self.url, self.params).json()

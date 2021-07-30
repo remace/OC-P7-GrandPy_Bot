@@ -22,13 +22,18 @@ class GMapsAPI:
         return self.response
 
     def _get_useful_data_from_response(self):
-        useful_data = {'results': {
-            'name': self.response['results'][0]['address_components'][0]['long_name'],
-            'formatted_address': self.response['results'][0]['formatted_address'],
-            'geometry': self.response['results'][0]['geometry']
-            },
-            'status': 'OK'
-        }
+        if self.response['results'] != []:
+            useful_data = {'results': {
+                'name': self.response['results'][0]['address_components'][0]['long_name'],
+                'formatted_address': self.response['results'][0]['formatted_address'],
+                'geometry': self.response['results'][0]['geometry']
+                },
+                'status': 'OK'
+            }
+        else:
+            useful_data={
+                'status': 'ZERO_ANSWER'
+            }
         return useful_data
 
     def search(self, sentence):

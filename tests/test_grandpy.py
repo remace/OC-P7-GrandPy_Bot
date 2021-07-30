@@ -7,9 +7,11 @@ class Test_Grandpy:
     def test_answer(self):
         result = {'maps_info': constants.USEFUL_DATA,
                   'wiki_info': {
-                      'intro': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['extract'],
-                      'title': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['title']
-                  }
-                  }
+                      'status': 'OK',
+                      'wikipedia_info': {
+                          'intro': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['extract'],
+                          'title': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['title']
+                      }
+                  }}
         gp = GrandPy.GrandPy()
         assert gp.answer("connais-tu le palais idéal du facteur cheval?") == result
