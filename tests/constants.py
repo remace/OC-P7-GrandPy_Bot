@@ -94,7 +94,6 @@ GMAPS_ANSWER_ZERO_RESULT = {
     "results": [],
     "status": "ZERO_RESULTS"}
 
-
 USEFUL_DATA = {"results":
     {
         'name':
@@ -130,45 +129,73 @@ USEFUL_DATA = {"results":
     'status': "OK"
 }
 
-JSON_WIKIPEDIA_RESPONSE_GEOSEARCH = {'wikipedia_infos':{"batchcomplete": "",
-                                     "query":
-                                         {"geosearch":
-                                             [{
-                                                 "pageid": 332154,
-                                                 "ns": 0,
-                                                 "title": "Palais idéal",
-                                                 "lat": 45.256267,
-                                                 "lon": 5.028506,
-                                                 "dist": 37.4,
-                                                 "primary": ""
-                                             },
-                                             {
-                                                 "pageid": 7966431,
-                                                 "ns": 0,
-                                                 "title": "Villa Alicius",
-                                                 "lat": 45.255889,
-                                                 "lon": 5.027794,
-                                                 "dist": 79.5,
-                                                 "primary": ""},
-                                             {
-                                                 "pageid": 355220,
-                                                 "ns": 0,
-                                                 "title": "Hauterives",
-                                                 "lat": 45.2561111111,
-                                                 "lon": 5.02722222222,
-                                                 "dist": 91.6,
-                                                 "primary": ""},
-                                             {
-                                                 "pageid": 7961734,
-                                                 "ns": 0,
-                                                 "title": "Château de Hauterives (Drôme)",
-                                                 "lat": 45.2539,
-                                                 "lon": 5.0293,
-                                                 "dist": 305.2,
-                                                 "primary": ""
-                                             }]
-                                         }
-                                     },
+USEFUL_DATA_LAUBRE = {'results': {
+        'formatted_address': 'Rue de Laubre, 07400 Meysse, France',
+        'geometry': {
+            'bounds':{
+                'northeast':
+                    {'lat': 44.6173264,
+                     'lng': 4.7219326
+                     },
+                'southwest':{
+                    'lat': 44.61466069999999,
+                    'lng': 4.7209626}
+                    },
+            'location': {'lat': 44.6160179,
+                         'lng': 4.7216464},
+            'location_type': 'GEOMETRIC_CENTER',
+            'viewport': {
+                'northeast': {
+                    'lat': 44.61734253029149,
+                    'lng': 4.722796580291503},
+                'southwest': {'lat': 44.6146445697085,
+                              'lng': 4.720098619708498}
+               }
+        },
+        'name': 'Rue de Laubre'
+    },
+        'status': 'OK'
+}
+
+JSON_WIKIPEDIA_RESPONSE_GEOSEARCH = {'wikipedia_infos': {"batchcomplete": "",
+                                                         "query":
+                                                             {"geosearch":
+                                                                 [{
+                                                                     "pageid": 332154,
+                                                                     "ns": 0,
+                                                                     "title": "Palais idéal",
+                                                                     "lat": 45.256267,
+                                                                     "lon": 5.028506,
+                                                                     "dist": 37.4,
+                                                                     "primary": ""
+                                                                 },
+                                                                     {
+                                                                         "pageid": 7966431,
+                                                                         "ns": 0,
+                                                                         "title": "Villa Alicius",
+                                                                         "lat": 45.255889,
+                                                                         "lon": 5.027794,
+                                                                         "dist": 79.5,
+                                                                         "primary": ""},
+                                                                     {
+                                                                         "pageid": 355220,
+                                                                         "ns": 0,
+                                                                         "title": "Hauterives",
+                                                                         "lat": 45.2561111111,
+                                                                         "lon": 5.02722222222,
+                                                                         "dist": 91.6,
+                                                                         "primary": ""},
+                                                                     {
+                                                                         "pageid": 7961734,
+                                                                         "ns": 0,
+                                                                         "title": "Château de Hauterives (Drôme)",
+                                                                         "lat": 45.2539,
+                                                                         "lon": 5.0293,
+                                                                         "dist": 305.2,
+                                                                         "primary": ""
+                                                                     }]
+                                                             }
+                                                         },
                                      'status': 'OK'
                                      }
 
@@ -179,7 +206,7 @@ JSON_WIKIPEDIA_RESPONSE_GEOSEARCH_VOID = {
     }
 }
 
-WIKIPEDIA_INTRO = {"batchcomplete":"",
+WIKIPEDIA_INTRO = {"batchcomplete": "",
                    "query": {
                        "pages":
                            {"332154":
@@ -199,4 +226,3 @@ WIKIPEDIA_INTRO = {"batchcomplete":"",
                             }
                    }
                    }
-

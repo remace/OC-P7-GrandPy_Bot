@@ -100,8 +100,12 @@ class Wikipedia_API:
         self._select_best_page(sentence)
         if self.best_page:
             infos = self._get_infos_on_page()
-            return {'wikipedia_infos': infos,
+            return {'wikipedia_infos':{
+                    'info': infos,
                     'status': 'OK'}
+            }
         else:
-            return {'wikipedia_infos': [],
-                    'status': 'ZERO_RESULT'}
+            return {'wikipedia_infos':{
+                        'info': [],
+                        'status': 'ZERO_RESULT'}
+            }

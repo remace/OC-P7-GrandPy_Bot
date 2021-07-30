@@ -38,11 +38,13 @@ class Test_Wikipedia_API:
         assert self.w._get_infos_on_page() == result
 
     def test_search_wikipedia(self):
-        result = {'wikipedia_infos': {
-                'title': constants.WIKIPEDIA_INTRO["query"]["pages"]['332154']['title'],
-                'intro': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['extract']
+        result = {'wikipedia_infos':{
+                    'info': {
+                        'title': constants.WIKIPEDIA_INTRO["query"]["pages"]['332154']['title'],
+                        'intro': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['extract']
+                    },
+                    'status': 'OK',
                 },
-            'status': 'OK',
             }
         assert self.w.search_wikipedia(lat=45.25653760000001,
                                        lng=5.0282228,

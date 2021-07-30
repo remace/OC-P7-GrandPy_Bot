@@ -170,6 +170,7 @@ form input{
     width: 80vw;
     margin: 10px;
     position: relative;
+    transform: translateX(50px);
 }
 
 
@@ -191,6 +192,7 @@ form input{
     margin: 20px;
     width: 45%;
     height: calc(100% - 40px);
+    min-height: 300px;
     overflow:auto;
 }
 
@@ -198,8 +200,6 @@ form input{
     height: 100%;
     width: 100%;
 }
-
-
 
 .wikimedia_container{
     width: 45%;

@@ -13,8 +13,9 @@ class Test_Views:
     def test_grandpy_api(self):
 
         result = {'maps_info': constants.USEFUL_DATA,
+                  'status':'OK',
                   'wiki_info': {
-                      'wikipedia_info': {
+                      'info': {
                         'intro': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['extract'],
                         'title': constants.WIKIPEDIA_INTRO["query"]['pages']['332154']['title'],
                     },
@@ -23,3 +24,4 @@ class Test_Views:
                   }
         rep = requests.get(self.url, self.params).json()
         assert rep == result
+
