@@ -23,7 +23,7 @@ function send_data(){
     create_question_div(INPUT.value)
     INPUT.value=''
     
-    fetch('http://127.0.0.1:5000/AskGrandPy/?sentence='+params.sentence)
+    fetch('/AskGrandPy/?sentence='+params.sentence)
         .then(res => res.json())
         .then(data => printResponse(data))
 };
@@ -65,7 +65,7 @@ function create_bad_answer(data){
             ANSWER_CONTAINER.scrollTop = ANSWER_CONTAINER.scrollHeight
         }
         case 'ZERO_RESULTS_WIKI':{
-            //création de la div wikipedia
+            //création de la div gmaps
             let gmaps_div =  create_google_maps_div(data)
             let gmaps_container = document.createElement('div')
             gmaps_container.classList.add('google_maps_container')

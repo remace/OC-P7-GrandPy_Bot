@@ -5,8 +5,9 @@
 @version 0.0.1
 @date 2021-07-19
 """
-import config
+
 import requests
+import config
 
 
 class GMapsAPI:
