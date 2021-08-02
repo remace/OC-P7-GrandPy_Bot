@@ -8,13 +8,13 @@
 
 from flask import Flask, render_template, request
 from libs.GrandPy import GrandPy
-import os
+import config
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', google_api_key = os.environ.get('GOOGLE_MAPS_KEY'))
+    return render_template('index.html', google_api_key=config.GOOGLE_MAPS_KEY)
 
 
 @app.route('/AskGrandPy/', methods=['GET'])

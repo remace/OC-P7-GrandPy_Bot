@@ -34,11 +34,11 @@ class GrandPy:
                 response['status'] = 'ZERO_RESULTS_WIKI'
                 response['message'] = "j'ai l'impression que c'est là. essaye de me dire dans quelle ville ça se " \
                                       "trouve dans ta question"
-                return response, 404
+                return response
         else:
             response = {
                 'status': 'ZERO_RESULTS_GMAPS',
                 'message': "je ne connais pas cet endroit. peut-être tu peux essayer d'être plus précis?"
             }
 
-            return response, 404
+            return response
