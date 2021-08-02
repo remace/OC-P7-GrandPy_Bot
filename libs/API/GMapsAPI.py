@@ -5,8 +5,9 @@
 @version 0.0.1
 @date 2021-07-19
 """
-import config
+
 import requests
+import os
 
 
 class GMapsAPI:
@@ -14,7 +15,7 @@ class GMapsAPI:
         self.params = {}
         self.response = {}
         self.api_url = "https://maps.googleapis.com/maps/api/geocode/json?"
-        self.params['key'] = config.GOOGLE_MAPS_KEY
+        self.params['key'] = os.environ.get('GOOGLE_MAPS_KEY')
 
     def _get_location(self, sentence):
         self.params['address'] = sentence
