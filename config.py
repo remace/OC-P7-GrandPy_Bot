@@ -7,5 +7,3 @@ if os.environ.get('GOOGLE_MAPS_KEY') is None:
 
 else:
     GOOGLE_MAPS_KEY = os.environ.get('GOOGLE_MAPS_KEY')
-
-print(GOOGLE_MAPS_KEY)
