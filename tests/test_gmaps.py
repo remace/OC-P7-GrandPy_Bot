@@ -4,6 +4,15 @@ import requests
 from io import BytesIO
 import json
 
+def mocked_requests_get(json_data,status_code):
+    class MockResponse:
+        def __init__(self, json_data, status_code):
+            self.json_data = json_data
+            self.status_code = status_code
+
+        def json(self):
+            return self.json_data
+    return MockResponse(json_data, status_code)
 
 class Test_GMapsAPI:
 
@@ -20,7 +29,8 @@ class Test_GMapsAPI:
        
         def mock_return(*args, **kwargs):
             results = constants.GMAPS_ANSWER
-            return BytesIO(json.dumps(results).encode())
+            response = mocked_requests_get(json_data = results, status_code=200)
+            return response
 
         monkeypatch.setattr(requests, 'get', mock_return)
 
@@ -32,7 +42,8 @@ class Test_GMapsAPI:
         '''
         def mock_return(*args, **kwargs):
             results = constants.GMAPS_ANSWER_ZERO_RESULT
-            return BytesIO(json.dumps(results).encode())
+            response = mocked_requests_get(json_data = results, status_code=200)
+            return response
 
         monkeypatch.setattr(requests, 'get', mock_return)
         assert self.gm._get_location('pmquhvb^quehgtbùôquetngùO') == constants.GMAPS_ANSWER_ZERO_RESULT
@@ -43,8 +54,8 @@ class Test_GMapsAPI:
         '''
         def mock_return(*args, **kwargs):
             results = constants.GMAPS_ANSWER
-            return BytesIO(json.dumps(results).encode())
-
+            response = mocked_requests_get(json_data = results, status_code=200)
+            return response
         monkeypatch.setattr(requests, 'get', mock_return)
 
         self.gm._get_location("connais palais facteur cheval")
@@ -56,10 +67,8 @@ class Test_GMapsAPI:
         ''' 
 
         def mock_return(*args, **kwargs):
-            search_result = constants.GMAPS_ANSWER
-            return BytesIO(json.dumps(search_result).encode())
-
+            results = constants.GMAPS_ANSWER
+            response = mocked_requests_get(json_data = results, status_code=200)
+            return response
         monkeypatch.setattr(requests, 'get', mock_return)
-
-
         assert self.gm.search("connais palais facteur cheval") == constants.USEFUL_DATA
