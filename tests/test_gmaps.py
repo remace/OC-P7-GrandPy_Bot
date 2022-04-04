@@ -14,29 +14,35 @@ class Test_GMapsAPI:
         self.gm = None
 
     def test_get_location(self, monkeypatch):
-        results = constants.GMAPS_ANSWER
-        
+        ''' tests _get_location function in nominal case.
+        it should return a dict describing the area found by google maps API (mocked) 
+        '''
+       
         def mock_return(*args, **kwargs):
             results = constants.GMAPS_ANSWER
             return BytesIO(json.dumps(results).encode())
 
         monkeypatch.setattr(requests, 'get', mock_return)
 
-        assert self.gm._get_location("connais palais idéal facteur cheval") == results
+        assert self.gm._get_location("connais palais idéal facteur cheval") == constants.GMAPS_ANSWER
 
     def test_get_location_not_existing(self, monkeypatch):
-        results = constants.GMAPS_ANSWER_ZERO_RESULT
+        ''' tests _get_location function in non-nominal case.
+        it should return a dict google maps API response when no result found (mocked) 
+        '''
         def mock_return(*args, **kwargs):
             results = constants.GMAPS_ANSWER_ZERO_RESULT
             return BytesIO(json.dumps(results).encode())
 
         monkeypatch.setattr(requests, 'get', mock_return)
-        assert self.gm._get_location('pmquhvb^quehgtbùôquetngùO') == results
+        assert self.gm._get_location('pmquhvb^quehgtbùôquetngùO') == constants.GMAPS_ANSWER_ZERO_RESULT
 
     def test_get_useful_data_from_response(self, monkeypatch):
-        results = constants.USEFUL_DATA
+        ''' tests _get_useful_data function
+            it should return the cleaned dict with only useful data in it
+        '''
         def mock_return(*args, **kwargs):
-            results = constants.USEFUL_DATA
+            results = constants.GMAPS_ANSWER
             return BytesIO(json.dumps(results).encode())
 
         monkeypatch.setattr(requests, 'get', mock_return)
@@ -45,14 +51,15 @@ class Test_GMapsAPI:
         assert self.gm._get_useful_data_from_response() == constants.USEFUL_DATA
 
     def test_search(self, monkeypatch):
-
-        results = constants.USEFUL_DATA
+        ''' tests the whole process of getting useful data from a search string. 
+        should return the cleaned dict with only useful data in it
+        ''' 
 
         def mock_return(*args, **kwargs):
-            search_result = constants.USEFUL_DATA
+            search_result = constants.GMAPS_ANSWER
             return BytesIO(json.dumps(search_result).encode())
 
         monkeypatch.setattr(requests, 'get', mock_return)
 
 
-        assert self.gm.search("connais palais facteur cheval") == results
+        assert self.gm.search("connais palais facteur cheval") == constants.USEFUL_DATA
