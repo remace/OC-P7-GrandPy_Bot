@@ -2,3 +2,10 @@ env/*
 .idea/*
 __pycache__/*
 API_Keys.py
+.vscode/settings.json
+.gitignore
+libs/API/__pycache__/*
+libs/GrandPy/__pycache__/*
+libs/parsing/__pycache__/*
+tests/__pycache__/*
+
