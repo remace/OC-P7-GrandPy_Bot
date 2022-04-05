@@ -31,6 +31,7 @@ class GMapsAPI:
                 },
                 'status': 'OK'
             }
+            self.try_registering_query()
         else:
             useful_data={
                 'status': 'ZERO_ANSWER'
@@ -40,3 +41,12 @@ class GMapsAPI:
     def search(self, sentence):
         self._get_location(sentence)
         return self._get_useful_data_from_response()
+
+    def try_registering_query(self):
+        address_components = self.response['results'][0]['address_components']
+        for comp in address_components:
+            if comp['types'][0] == 'country' and comp['long_name'] == 'France':
+                for component in address_components:
+                    if component['types'][0] == "administrative_area_level_1":
+                        requests.post(url='http://127.0.0.1:8000/stats/', data={'region':component['long_name']})
+                        
