@@ -10,6 +10,8 @@
         <link rel="icon" href="{{ url_for('static', filename='img/logo.jpg')}}">
         <script src="https://kit.fontawesome.com/148d70ce90.js" crossorigin="anonymous"></script>
         <script src="{{url_for('static', filename='js/help_btn.js')}}" defer></script>
+        <script src="{{url_for('static', filename='js/stats_btn.js')}}" defer></script>
+        <script src= "{{ url_for('static',filename='js/script.js') }} " async defer></script>
         <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&libraries=&v=weekly" async></script>
     </head>
     <body>
@@ -39,7 +41,16 @@
                         <p>Vous avez une question sur un lieu? demandez à GrandPy, lui, il sait! Il vous trouvera son adresse et vous donnera quelques informations dessus, un peu comme tous les grand-pères!</p>
                         <p>Par exemple, vous pouvez taper "Palais de l'Elysée" dans la barre centrale de l'application, il devrait vous donner son adresse et vous expliquer l'utilité de ce lieu, à quel moment </p>
                     </div>
-            </div>         
+                </div>
+                <!--btn stats-->
+                <div class="toggle" id="stats_toggle">
+                <div class="button" id="stats_button">
+                    <i class="fa-solid fa-chart-column"></i>         
+                </div>
+                <div class="help_text" id="stats_modal">
+                    <h2 id="stats_title">Statistiques</h2>
+                    <div id="stats_result"></div>
+                </div>
             </form>
             <div id="answer_container">
             </div>
@@ -61,6 +72,5 @@
                 </div>
             </div>
         </footer>
-        <script src= "{{ url_for('static',filename='js/script.js') }} " async defer></script>
     </body>
 </html>

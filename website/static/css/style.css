@@ -6,7 +6,10 @@
 }
 
 body{
-    background-color: #1ce;;
+    background-color: #1ce;
+    width: 100vw;
+    height: 100vh;
+
 }
 
 #row_change{
@@ -81,7 +84,7 @@ form input{
     min-height: 2.5em;
     border-radius: 50%;
     position: relative;
-    margin-right 20px;
+    margin-right: 20px;
     
 }
 
@@ -98,32 +101,38 @@ form input{
 }
 
 
-#help_button{
+#help_button, 
+#stats_button{
     background-color: white;
     z-index: 20;
     transition: all 0.3s ease-in-out;
 }
 
-#help_toggle.active #help_button{
+#help_toggle.active #help_button,
+#stats_toggle.active #stats_button{
     background-color: #1ce;
     transform: translate(-5px, 5px);
 }
 
-#help_toggle i{
+#help_toggle i,
+#stats_toggle i{
     color: #1ce;
     z-index: 30;
 }
 
-#help_toggle.active i{
+#help_toggle.active i,
+#stats_toggle.active i{
     color: white;
-    z-index: 30;
+    z-index: 45;
 }
 
-#help_toggle #help_text{
+#help_toggle #help_text,
+#stats_toggle #stats_modal{
     display: None;
 }
 
-#help_toggle.active #help_text {
+#help_toggle.active #help_text,
+#stats_toggle.active #stats_modal{
     display: inline-block;
     background-color: white;
     position:absolute;
@@ -146,13 +155,37 @@ form input{
     color: white;
 }
 
+/* query stats table */
+
+#stats_title{
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+  }
+  
+  thead th:nth-child(1) {
+    width: 50%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 50%;
+  }
+  
+  th, td {
+    padding: 20px;
+  }
 
 /* answers container */
 
 #answer_container{
     display: flex;
     flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
     align-items: center;
     width: 90vw;
     height: 65vh;
@@ -241,7 +274,7 @@ form input{
 
 .answer a:hover{
     outline:none;
-    cursor: pointer:
+    cursor: pointer;
 }
 
 
@@ -334,7 +367,8 @@ footer
         padding: 30px;
     }
 
-    #help_toggle.active #help_button{
+    #help_toggle.active #help_button,
+    #stats_toggle.active #stats_button{
         transform: translate(-5px, -5px);
     }
 
@@ -345,8 +379,6 @@ footer
         justify-content: center;
     }
 }
-
-
 
 @media (max-width:1000px){
     .google_maps_container{

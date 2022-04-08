@@ -30,36 +30,22 @@ def ask_grandpy():
     return grandpy.answer(sentence)
 
 
-@app.route("/stats/", methods=["GET", "POST"])
+@app.route("/stats/", methods=["GET"])
 def stats():
-    """either registers a new query in database if request is POST
-    or gets every region's query count in database
-    """
-    if request.method == "POST":
-        # region_name = request.args.get("region")
-        # print(f"region_name: {region_name}")
-        # region = FrenchRegion.query.filter(FrenchRegion.name == region_name)
-        # print(f"region: {region}")
-        # gpQuery = GrandPyQuery(region.id)
-        # print(f"gpQuery: {gpQuery}")
-        # db.session.add(gpQuery)
-        # db.session.commit()
-        return "hello post"
-
-    if request.method == "GET":
-        # get number of requests for every region
-        query_numbers_by_region_as_tuple = (
-            FrenchRegion.query.with_entities(
-                FrenchRegion.name, func.count(GrandPyQuery.search_datetime)
-            )
-            .join(GrandPyQuery, GrandPyQuery.region_id == FrenchRegion.id, isouter=True)
-            .group_by(FrenchRegion.name)
-            .all()
+    """ gets every region's query count in database """
+    # get number of requests for every region
+    query_numbers_by_region_as_tuple = (
+        FrenchRegion.query.with_entities(
+            FrenchRegion.name, func.count(GrandPyQuery.search_datetime)
         )
+        .join(GrandPyQuery, GrandPyQuery.region_id == FrenchRegion.id, isouter=True)
+        .group_by(FrenchRegion.name)
+        .all()
+    )
 
-        # make it a dict
-        query_number = {}
-        for number in query_numbers_by_region_as_tuple:
-            query_number[number[0]] = number[1]
+    # make it a dict
+    query_number = {}
+    for number in query_numbers_by_region_as_tuple:
+        query_number[number[0]] = number[1]
 
-        return query_number
+    return query_number

@@ -7,7 +7,7 @@
 """
 
 
-from libs.API import wikipedia_API, GMapsAPI
+from libs.API import wikipedia_API, GMapsAPI, statsAPI
 from libs.parsing import parser
 
 
@@ -17,28 +17,33 @@ class GrandPy:
         self.parser = parser.SentenceParser()
         self.google_maps = GMapsAPI.GMapsAPI()
         self.wikipedia = wikipedia_API.Wikipedia_API()
+        self.stats = statsAPI.StatsAPI()
+        self.response = {}
 
     def answer(self, sentence):
-        response = {}
+        
         clear_sentence = self.parser.get_clean_sentence(sentence)
-        response['maps_info'] = self.google_maps.search(clear_sentence)
-        if response['maps_info']['status'] == 'OK':
-            lat = response['maps_info']['results']['geometry']['location']['lat']
-            lng = response['maps_info']['results']['geometry']['location']['lng']
+        self.response['maps_info'] = self.google_maps.search(clear_sentence)
+        if self.response['maps_info']['status'] == 'OK':
+            lat = self.response['maps_info']['results']['geometry']['location']['lat']
+            lng = self.response['maps_info']['results']['geometry']['location']['lng']
+            self.stats.set_maps_data(self.response['maps_info'])
+            self.stats.register_query()
             wiki = self.wikipedia.search_wikipedia(lat, lng, clear_sentence)['wikipedia_infos']
             if wiki['status'] == 'OK':
-                response['status'] = 'OK'
-                response['wiki_info'] = wiki
-                return response
+                self.response['status'] = 'OK'
+                self.response['wiki_info'] = wiki
+                return self.response
             else:
-                response['status'] = 'ZERO_RESULTS_WIKI'
-                response['message'] = "j'ai l'impression que c'est là. essaye de me dire dans quelle ville ça se " \
+                self.response['status'] = 'ZERO_RESULTS_WIKI'
+                self.response['message'] = "j'ai l'impression que c'est là. essaye de me dire dans quelle ville ça se " \
                                       "trouve dans ta question"
-                return response
+                return self.response
+            
         else:
-            response = {
+            self.response = {
                 'status': 'ZERO_RESULTS_GMAPS',
                 'message': "je ne connais pas cet endroit. peut-être tu peux essayer d'être plus précis?"
             }
 
-            return response
+            return self.response
