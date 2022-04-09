@@ -25,7 +25,7 @@ class Wikipedia_API:
             'gslimit': 10,
             'gscoord': f"{lat}|{lng}"
         }
-        self.response = requests.get(self.url, self.params).json()
+        self.response = requests.get(url=self.url, params=self.params).json()
         return {'wikipedia_infos': self.response,
                 'status': 'OK'}
 
@@ -88,7 +88,7 @@ class Wikipedia_API:
             'pageids': self.best_page['pageid']
         }
 
-        response = requests.get(self.url, self.params).json()
+        response = requests.get(url=self.url, params=self.params).json()
         infos = {
             'title': response['query']['pages'][f'{self.best_page["pageid"]}']['title'],
             'intro': response['query']['pages'][f'{self.best_page["pageid"]}']['extract']
