@@ -26,7 +26,7 @@ class Wikipedia_API:
             'gscoord': f"{lat}|{lng}"
         }
         self.response = requests.get(self.url, self.params).json()
-        return {'wikipedia_infos':self.response,
+        return {'wikipedia_infos': self.response,
                 'status': 'OK'}
 
     @staticmethod
