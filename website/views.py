@@ -33,7 +33,6 @@ def ask_grandpy():
 @app.route("/stats/", methods=["GET"])
 def stats():
     """gets every region's query count in database"""
-    # get number of requests for every region
     query_numbers_by_region_as_tuple = (
         FrenchRegion.query.with_entities(
             FrenchRegion.name, func.count(GrandPyQuery.search_datetime)
@@ -43,9 +42,5 @@ def stats():
         .all()
     )
 
-    # make it a dict
-    query_number = {}
-    for number in query_numbers_by_region_as_tuple:
-        query_number[number[0]] = number[1]
-
-    return query_number
+    query_numbers = {number[0]:number[1] for number in query_numbers_by_region_as_tuple}
+    return query_numbers
