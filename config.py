@@ -18,4 +18,8 @@ if os.environ.get('FLASK_ENV') == 'development':
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 elif os.environ.get('FLASK_ENV') == 'production':
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL')
+    uri=os.environ.get('DATABASE_URL')
+    if uri and uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql://", 1)
+    
+    SQLALCHEMY_DATABASE_URI = uri
