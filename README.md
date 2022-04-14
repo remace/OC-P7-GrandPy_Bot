@@ -1,6 +1,6 @@
 # OC-P7-GrandPy_Bot
 
-version finale au tag P7
+version finale au tag v1.0
 
 ## introduction
  projet d'études mêlant requêtes d'API, flask, et TDD
@@ -32,5 +32,6 @@ GrandPy envoie un nouveau message : "Mais t'ai-je déjà raconté l'histoire de 
 
 # OC-P11-Enhance a former project
 
-version finale au tag P11
+version finale au tag v1.1
+
 nouvelle fonctionnalité: ajout d'une fenêtre modale de statistiques contenant le nombre de requêtes pointant vers chaque région française

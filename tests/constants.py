@@ -114,10 +114,6 @@ USEFUL_DATA = {
     "status": "OK",
 }
 
-<<<<<<< HEAD
-USEFUL_DATA_LAUBRE = {
-    "results": {
-=======
 GMAPS_ANSWER_LAUBRE = {
     "results": [
         {
@@ -200,7 +196,6 @@ USEFUL_DATA_LAUBRE = {
             },
             {"long_name": "07400", "short_name": "07400", "types": ["postal_code"]},
         ],
->>>>>>> 23222cc (pep 8)
         "formatted_address": "Rue de Laubre, 07400 Meysse, France",
         "geometry": {
             "bounds": {

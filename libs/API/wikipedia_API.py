@@ -25,14 +25,8 @@ class Wikipedia_API:
             "gslimit": 10,
             "gscoord": f"{lat}|{lng}",
         }
-<<<<<<< HEAD
-        self.response = requests.get(self.url, self.params).json()
-        return {'wikipedia_infos': self.response,
-                'status': 'OK'}
-=======
         self.response = requests.get(url=self.url, params=self.params).json()
         return {"wikipedia_infos": self.response, "status": "OK"}
->>>>>>> 23222cc (pep 8)
 
     @staticmethod
     def title_score(page, sentence):
