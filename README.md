@@ -1,5 +1,7 @@
 # OC-P7-GrandPy_Bot
 
+version finale au tag P7
+
 ## introduction
  projet d'études mêlant requêtes d'API, flask, et TDD
 ## cahier des charges
@@ -27,3 +29,8 @@ GrandPy envoie un nouveau message : "Mais t'ai-je déjà raconté l'histoire de 
 * Utilisation d'AJAX pour l'envoi des questions et l'affichage des réponses (les questions et réponses sont en une seule langue au choix, anglais ou français)
 * Tests utilisant des mocks pour les API
 * hébergement sur Heroku
+
+# OC-P11-Enhance a former project
+
+version finale au tag P11
+nouvelle fonctionnalité: ajout d'une fenêtre modale de statistiques contenant le nombre de requêtes pointant vers chaque région française

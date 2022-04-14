@@ -2,6 +2,7 @@ env/*
 .idea/*
 __pycache__/*
 API_Keys.py
+app.db
 .vscode/settings.json
 .gitignore
 libs/API/__pycache__/*

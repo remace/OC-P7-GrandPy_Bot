@@ -32,7 +32,7 @@ def ask_grandpy():
 
 @app.route("/stats/", methods=["GET"])
 def stats():
-    """ gets every region's query count in database """
+    """gets every region's query count in database"""
     # get number of requests for every region
     query_numbers_by_region_as_tuple = (
         FrenchRegion.query.with_entities(
