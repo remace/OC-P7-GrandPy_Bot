@@ -1,7 +1,6 @@
 from libs.API import GMapsAPI
 from tests import constants
 import requests
-from io import BytesIO
 import json
 
 

@@ -1,5 +1,7 @@
 from tests import constants
 from libs.GrandPy import GrandPy
+import requests
+import json
 
 
 def mocked_requests_get(json_data, status_code):
@@ -75,7 +77,7 @@ class Test_Grandpy:
 
         assert self.gp.answer("oeurtgbq^ùoqebngf ùqerdg n") == result
 
-    def test_answer_wikipedia_fails(self):
+    def test_answer_wikipedia_fails(self, monkeypatch):
         result = {
             "status": "ZERO_RESULTS_WIKI",
             "maps_info": constants.USEFUL_DATA_LAUBRE,

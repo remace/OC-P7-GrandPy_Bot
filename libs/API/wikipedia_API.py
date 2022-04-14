@@ -88,7 +88,7 @@ class Wikipedia_API:
             "pageids": self.best_page["pageid"],
         }
 
-        response = requests.get(self.url, self.params).json()
+        response = requests.get(url=self.url, params=self.params).json()
         infos = {
             "title": response["query"]["pages"][f'{self.best_page["pageid"]}']["title"],
             "intro": response["query"]["pages"][f'{self.best_page["pageid"]}'][
