@@ -115,144 +115,87 @@ USEFUL_DATA = {
 }
 
 GMAPS_ANSWER_LAUBRE = {
-  "results": [
-    {
-      "address_components": [
+    "results": [
         {
-          "long_name": "Rue de Laubre",
-          "short_name": "Rue de Laubre",
-          "types": [
-            "route"
-          ]
-        },
-        {
-          "long_name": "Meysse",
-          "short_name": "Meysse",
-          "types": [
-            "locality",
-            "political"
-          ]
-        },
-        {
-          "long_name": "Ardèche",
-          "short_name": "Ardèche",
-          "types": [
-            "administrative_area_level_2",
-            "political"
-          ]
-        },
-        {
-          "long_name": "Auvergne-Rhône-Alpes",
-          "short_name": "Auvergne-Rhône-Alpes",
-          "types": [
-            "administrative_area_level_1",
-            "political"
-          ]
-        },
-        {
-          "long_name": "France",
-          "short_name": "FR",
-          "types": [
-            "country",
-            "political"
-          ]
-        },
-        {
-          "long_name": "07400",
-          "short_name": "07400",
-          "types": [
-            "postal_code"
-          ]
+            "address_components": [
+                {
+                    "long_name": "Rue de Laubre",
+                    "short_name": "Rue de Laubre",
+                    "types": ["route"],
+                },
+                {
+                    "long_name": "Meysse",
+                    "short_name": "Meysse",
+                    "types": ["locality", "political"],
+                },
+                {
+                    "long_name": "Ardèche",
+                    "short_name": "Ardèche",
+                    "types": ["administrative_area_level_2", "political"],
+                },
+                {
+                    "long_name": "Auvergne-Rhône-Alpes",
+                    "short_name": "Auvergne-Rhône-Alpes",
+                    "types": ["administrative_area_level_1", "political"],
+                },
+                {
+                    "long_name": "France",
+                    "short_name": "FR",
+                    "types": ["country", "political"],
+                },
+                {"long_name": "07400", "short_name": "07400", "types": ["postal_code"]},
+            ],
+            "formatted_address": "Rue de Laubre, 07400 Meysse, France",
+            "geometry": {
+                "bounds": {
+                    "northeast": {"lat": 44.6173264, "lng": 4.7219326},
+                    "southwest": {"lat": 44.61466069999999, "lng": 4.7209626},
+                },
+                "location": {"lat": 44.6160179, "lng": 4.7216464},
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {"lat": 44.61734253029149, "lng": 4.722796580291503},
+                    "southwest": {"lat": 44.6146445697085, "lng": 4.720098619708498},
+                },
+            },
+            "place_id": "ChIJ5e7-PvE_tRIR60Bw2Z79pjI",
+            "types": ["route"],
         }
-      ],
-      "formatted_address": "Rue de Laubre, 07400 Meysse, France",
-      "geometry": {
-        "bounds": {
-          "northeast": {
-            "lat": 44.6173264,
-            "lng": 4.7219326
-          },
-          "southwest": {
-            "lat": 44.61466069999999,
-            "lng": 4.7209626
-          }
-        },
-        "location": {
-          "lat": 44.6160179,
-          "lng": 4.7216464
-        },
-        "location_type": "GEOMETRIC_CENTER",
-        "viewport": {
-          "northeast": {
-            "lat": 44.61734253029149,
-            "lng": 4.722796580291503
-          },
-          "southwest": {
-            "lat": 44.6146445697085,
-            "lng": 4.720098619708498
-          }
-        }
-      },
-      "place_id": "ChIJ5e7-PvE_tRIR60Bw2Z79pjI",
-      "types": [
-        "route"
-      ]
-    }
-  ],
-  "status": "OK"
+    ],
+    "status": "OK",
 }
 
 
 USEFUL_DATA_LAUBRE = {
     "results": {
         "address_components": [
-        {
-          "long_name": "Rue de Laubre",
-          "short_name": "Rue de Laubre",
-          "types": [
-            "route"
-          ]
-        },
-        {
-          "long_name": "Meysse",
-          "short_name": "Meysse",
-          "types": [
-            "locality",
-            "political"
-          ]
-        },
-        {
-          "long_name": "Ardèche",
-          "short_name": "Ardèche",
-          "types": [
-            "administrative_area_level_2",
-            "political"
-          ]
-        },
-        {
-          "long_name": "Auvergne-Rhône-Alpes",
-          "short_name": "Auvergne-Rhône-Alpes",
-          "types": [
-            "administrative_area_level_1",
-            "political"
-          ]
-        },
-        {
-          "long_name": "France",
-          "short_name": "FR",
-          "types": [
-            "country",
-            "political"
-          ]
-        },
-        {
-          "long_name": "07400",
-          "short_name": "07400",
-          "types": [
-            "postal_code"
-          ]
-        }
-      ],
+            {
+                "long_name": "Rue de Laubre",
+                "short_name": "Rue de Laubre",
+                "types": ["route"],
+            },
+            {
+                "long_name": "Meysse",
+                "short_name": "Meysse",
+                "types": ["locality", "political"],
+            },
+            {
+                "long_name": "Ardèche",
+                "short_name": "Ardèche",
+                "types": ["administrative_area_level_2", "political"],
+            },
+            {
+                "long_name": "Auvergne-Rhône-Alpes",
+                "short_name": "Auvergne-Rhône-Alpes",
+                "types": ["administrative_area_level_1", "political"],
+            },
+            {
+                "long_name": "France",
+                "short_name": "FR",
+                "types": ["country", "political"],
+            },
+            {"long_name": "07400", "short_name": "07400", "types": ["postal_code"]},
+        ],
         "formatted_address": "Rue de Laubre, 07400 Meysse, France",
         "geometry": {
             "bounds": {
