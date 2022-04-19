@@ -19,6 +19,7 @@ class GMapsAPI:
 
     def _get_location(self, sentence):
         self.params["address"] = sentence
+        self.params["language"]  ='fr'
         self.response = requests.get(url=self.api_url, params=self.params).json()
         return self.response
 
