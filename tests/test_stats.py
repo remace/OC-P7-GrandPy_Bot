@@ -11,8 +11,7 @@ app.config.from_object("config_test")
 class TestStats():
     
     def setUp(self):
-        init_db()
-        print("database initialized")    
+        init_db()   
 
     def tearDown(self):
         pass
