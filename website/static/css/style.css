@@ -338,11 +338,16 @@ footer
 @media (max-width:600px){
     header{
         height: 7vh;
+        min-height:65px;
     }
 
     form{
         order:2;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+    }
+
+    form input{
+        padding: 0;
     }
 
     #answer_container{
@@ -381,9 +386,63 @@ footer
     #row_change{
         display: inline;
     }
+
+
+    footer{
+        position: relative;
+        bottom: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #footer_container{
+        position: relative;
+        background: gold;
+        min-height: 100px;
+        bottom: 0;
+        height:auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
     #credits{
         justify-content: center;
     }
+
+
+
+
+
+
+/*
+    <div class="toggle active" id="stats_toggle">
+        <div class="button" id="stats_button">
+            <i class="fa-solid fa-chart-column"></i>
+        </div>
+    <div class="help_text" id="stats_modal">
+        <h2 id="stats_title">Statistiques</h2>
+        <div id="stats_result">
+            <table>
+                <thead>
+                    <tr>
+                        <th>région</th>
+                        <th>requêtes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Île-de-France</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+*/
+
+
+
+
 }
 
 @media (max-width:1000px){
