@@ -350,6 +350,12 @@ footer
         height:63vh;
     }
 
+    #answer_container .answer{
+        max-width: 70vw;
+        position: relative;
+        right: 20px;
+    }
+
     #help_toggle #help_text{
         display:none;
     }
